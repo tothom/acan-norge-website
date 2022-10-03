@@ -1,0 +1,36 @@
+
+
+.margin-s {
+  margin-bottom: .75rem;
+}
+
+.margin-m {
+  margin-bottom: 1.5rem;
+}
+
+.margin-l {
+  margin-bottom: 3rem;
+}
+
+.margin-xl {
+  margin-bottom: 4.5rem;
+}
+
+.margin-xxl {
+  margin-bottom: 6rem;
+}
+
+.outline-text {
+  font-weight: 680;
+  -webkit-text-stroke-color: currentColor;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-fill-color: var(--color-background);
+  /*color: var(--color-background);*/
+  /*  --outline-width: 1px;
+    --outline-width--: calc(var(--outline-width) * -1);
+    text-shadow:
+      var(--color-text) var(--outline-width--) var(--outline-width--) 0px,
+      var(--color-text) var(--outline-width--) var(--outline-width) 0px,
+      var(--color-text) var(--outline-width) var(--outline-width) 0px,
+      var(--color-text) var(--outline-width) var(--outline-width--) 0px;*/
+}

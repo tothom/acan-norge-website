@@ -1,0 +1,15 @@
+<header class="header">
+    {% block header %}
+
+        <a class="logo" href="{{ site.url() }}">
+            <img src="assets/icons/ACAN_Logo_Lockup_Black_4x.png">
+        </a>
+
+        <nav class="menu">
+            {% for item in site.children().listed() %}
+                <a {{ item.isOpen() ? 'aria-current ' : '' }} href="{{ item.url() }}">{{ item.title.esc() }}</a>
+            {% endfor %}
+        </nav>
+
+    {% endblock %}
+</header>

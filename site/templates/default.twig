@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>{{ site.title.esc() }} | {{ page.title.esc() }}</title>
+
+    {{ css([
+        'assets/css/prism.css',
+        'assets/css/lightbox.css',
+        'assets/css/index.css',
+        '@auto'
+    ]) }}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('favicon.ico') }}">
+
+{#    {{ source('@snippets/collections.twig') }}#}
+{#    {% include '@snippets/collections.twig' %}#}
+{#    {% extends '@snippets/collections.twig' %}#}
+    {# Collections #}
+    {% set events = page('events')
+        .children()
+        .listed()
+        .sortBy('date', 'desc') %}
+
+</head>
+
+<body>
+
+    {% include '@snippets/header.twig' %}
+
+    <main class="main">
+        {% block content %}
+            <article>
+                <h1 class="h1">{{ page.title.esc() }}</h1>
+                <div class="text">
+                    {{ page.text.kt | raw }}
+                </div>
+            </article>
+        {% endblock %}
+    </main>
+
+    {% include '@snippets/footer.twig' %}
+
+{{ js([
+    'assets/js/prism.js',
+    'assets/js/lightbox.js',
+    'assets/js/index.js',
+    '@auto'
+]) }}
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+
+@font-face {
+	font-family: 'Spezia';
+	font-weight: normal;
+	font-display: swap;
+	font-style: normal;
+	font-named-instance: 'Regular';
+	src: url('../fonts/spezia/Spezia-Regular.otf');
+}
+
+
+@font-face {
+	font-family: 'Spezia';
+	font-weight: bold;
+	font-display: swap;
+	font-style: normal;
+  font-stretch: condensed;
+	font-named-instance: 'Condensed SemiBold';
+	src: url('../fonts/spezia/Spezia-CondensedSemiBold.otf');
+}

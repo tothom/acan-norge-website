@@ -1,0 +1,21 @@
+<article class="event-excerpt">
+    <a href="{{ event.url() }}">
+
+        <time class="h5" datetime="{{ event.date().toDate('c') }}">
+            {{ event.date().toDate('d/m/Y') }}
+        </time>
+
+        <h4 class="event-excerpt-title">{{ event.title().esc() }}</h4>
+
+        <figure class="img" style="--w: 16; --h:9">
+            {% if event.cover %}
+                {{ event.cover.crop(320, 180) }}
+                <img src="{{ event.url() }}/{{ event.cover().url() }}"/>
+            {% endif %}
+        </figure>
+
+        <p class="h6">
+            {{ event.description.excerpt(280) }}
+        </p>
+    </a>
+</article>

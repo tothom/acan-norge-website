@@ -1,0 +1,14 @@
+<header class="h1">
+    {% if page.headline.isNotEmpty %}
+
+        <h1 class="h1 outline-text" style="text-align: center">
+            {{ page.headline.esc() }}</h1>
+
+    {% endif %}
+
+    {% if page.subheadline.isNotEmpty %}
+
+        <p class="h3">{{ page.subheadline.esc() }}</p>
+
+    {% endif %}
+</header>
