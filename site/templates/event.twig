@@ -4,23 +4,31 @@
     <article class="event">
         <header class="event-header">
             <h1 class="event-title">{{ page.title.esc() }}</h1>
+            <div class="autogrid">
+                <div class="column">
 
-            <time class="h5" datetime="{{ page.date.toDate('c') }}">
-                {{ page.date.toDate('d/m/Y') }}
-            </time>
-            <br/>
+                    <time class="h5" datetime="{{ page.date.toDate('c') }}">
+                        {{ page.date.toDate('d/m/Y') }}
+                    </time>
+                    <br/>
 
-            <a class="h5" href="{{ page.content().link() }}">Link</a>
-            <br/>
+                    <a class="h5" href="{{ page.content().link() }}">Link</a>
+                    <br/>
 
-            <p class="h6">{{ page.description }}</p>
-
-            {% if page.cover %}
-                <a href="{{ page.cover.url() }}" data-lightbox class="img" style="--w:2; --h:1">
-                    {{ page.cover.crop(1200, 600) }}
-                </a>
-            {% endif %}
+                    <p class="h6">{{ page.description }}</p>
+                </div>
+                <div class="column">
+                    {% if page.cover %}
+                        <a href="{{ page.cover.url() }}" data-lightbox class="img" style="--w:2; --h:1">
+                            {{ page.cover.crop(1200, 600) }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
         </header>
-        <div class="event text">{{ page.text.toBlocks() | raw }}</div>
+        {% block blocks %}
+            {{ parent() }}
+        {% endblock %}
+        {#        <div class="event text">{{ page.text.toBlocks() | raw }}</div> #}
     </article>
 {% endblock %}
