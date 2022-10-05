@@ -1,11 +1,34 @@
+{% set darkmode = true %}
+
 {% extends 'default.twig' %}
+
+{% block head %}
+    {{ parent() }}
+    <style>
+        :root {
+            --color-background: #2E3192;
+            --color-text: #fff;
+        }
+    </style>
+{% endblock %}
+
+{% block header %}
+    {% include '@snippets/header.dark.twig' %}
+{% endblock %}
+
 
 {% block content %}
     <ul class="card-list">
         {% for event in events %}
             <li class="card">
-                {{ include('@snippets/event-card.twig', {event: event})}}
+                {{ include('@snippets/event-card.twig', {event: event}) }}
             </li>
         {% endfor %}
     </ul>
+{% endblock %}
+
+{% block footer %}
+
+    {% include '@snippets/footer.dark.twig' %}
+
 {% endblock %}
