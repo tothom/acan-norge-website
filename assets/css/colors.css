@@ -4,6 +4,7 @@
   --color-white: #fff;
   --color-grey: #777;
   --color-light: #efefef;
+  --color-primary: #FF0303;
   --color-text: var(--color-black);
   --color-text-grey: var(--color-grey);
   --color-background: var(--color-white);
@@ -17,6 +18,7 @@
   --color-code-aqua: #8abeb7;
   --color-code-blue: #7e9abf;
   --color-code-purple: #b294bb;
+
 }
 
 
