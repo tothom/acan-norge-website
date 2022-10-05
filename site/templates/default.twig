@@ -1,3 +1,10 @@
+{% set events = page('events')
+    .children()
+    .listed()
+    .sortBy('date', 'desc') %}
+
+{% set darkmode = false %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,33 +22,54 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ url('favicon.ico') }}">
 
-{#    {{ source('@snippets/collections.twig') }}#}
-{#    {% include '@snippets/collections.twig' %}#}
-{#    {% extends '@snippets/collections.twig' %}#}
+    {#    {{ source('@snippets/collections.twig') }} #}
+    {#    {% include '@snippets/collections.twig' %} #}
+    {#    {% extends '@snippets/collections.twig' %} #}
     {# Collections #}
-    {% set events = page('events')
-        .children()
-        .listed()
-        .sortBy('date', 'desc') %}
+    {% block head %}
+
+    {% endblock head %}
 
 </head>
 
 <body>
 
+{% block header %}
     {% include '@snippets/header.twig' %}
+{% endblock %}
 
-    <main class="main">
-        {% block content %}
-            <article>
-                <h1 class="h1">{{ page.title.esc() }}</h1>
+<main class="main">
+    {% block content %}
+        <article>
+            <h1 class="h1">{{ page.title.esc() }}</h1>
+
+            {% block blocks %}
                 <div class="text">
-                    {{ page.text.kt | raw }}
+                    {% for block in page.text.toBLocks() %}
+                        <div id="{{ block.type }}" class="block block-type-{{ block.type }}">
+                            {{ block | raw }}
+                        </div>
+                    {% endfor %}
+                    {#                {{ page.text.toBlocks() | raw }} #}
                 </div>
-            </article>
-        {% endblock %}
-    </main>
+            {% endblock blocks %}
+
+        </article>
+    {% endblock %}
+</main>
+
+{% block footer %}
+
+    {#    {% if darkmode %} #}
+    {#        {% include '@snippets/footer.dark.twig'%} #}
+    {#    {% else %} #}
+    {#        {% include '@snippets/footer.twig' %} #}
+    {#    {% endif %} #}
 
     {% include '@snippets/footer.twig' %}
+
+
+{% endblock %}
 
 {{ js([
     'assets/js/prism.js',
