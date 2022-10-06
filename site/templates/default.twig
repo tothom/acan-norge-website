@@ -39,22 +39,30 @@
 {% endblock %}
 
 <main class="main">
+    <article>
+        {#            <h1 class="h1">{{ page.title.esc() }}</h1> #}
+        {% block blocks %}
+            <div class="text">
+                {% for block in page.text.toBLocks() %}
+                    <div id="{{ block.type }}" class="block block-type-{{ block.type }}">
+                        {{ block | raw }}
+                    </div>
+                {% endfor %}
+                {#                {{ page.text.toBlocks() | raw }} #}
+            </div>
+        {% endblock blocks %}
+
+    </article>
     {% block content %}
-        <article>
-            <h1 class="h1">{{ page.title.esc() }}</h1>
-
-            {% block blocks %}
-                <div class="text">
-                    {% for block in page.text.toBLocks() %}
-                        <div id="{{ block.type }}" class="block block-type-{{ block.type }}">
-                            {{ block | raw }}
-                        </div>
-                    {% endfor %}
-                    {#                {{ page.text.toBlocks() | raw }} #}
-                </div>
-            {% endblock blocks %}
-
-        </article>
+        {% block subpages %}
+            {% for subpage in page.children() %}
+                <li>
+                    <a class="h5" style="text-decoration: underline" href="{{ subpage.url() }}">
+                        {{ html(subpage.title) }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endblock %}
     {% endblock %}
 </main>
 

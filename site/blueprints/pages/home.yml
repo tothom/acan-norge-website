@@ -25,18 +25,8 @@ columns:
         type: fields
         fields:
           text:
-            type: blocks
+            type: textarea
             label: Text
-  sidebar:
-    width: 1/3
-    sections:
 
-      # Pages section: https://getkirby.com/docs/reference/panel/sections/pages
-      pages:
-        type: pages
-        template: default
-      # Files section: https://getkirby.com/docs/reference/panel/sections/files
-      files:
-        type: files
 
 

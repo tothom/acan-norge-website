@@ -212,7 +212,13 @@ h6,
 .block blockquote h3,
 .block blockquote h4,
 .block blockquote h5,
-.block blockquote h6
+.block blockquote h6,
+.text blockquote h1,
+.text blockquote h2,
+.text blockquote h3,
+.text blockquote h4,
+.text blockquote h5,
+.text blockquote h6
 {
   font-weight: normal;
   font-stretch: normal;
@@ -318,14 +324,10 @@ button {
   font-weight: 600;
 }
 
-/*.text blockquote {*/
-/*  font-size: 1.25rem;*/
-/*  line-height: 1.325em;*/
-/*  border-left: 2px solid var(--color-black);*/
-/*  padding-left: 1rem;*/
-/*  margin: 3rem 0;*/
-/*  max-width: 25rem;*/
-/*}*/
+.text blockquote {
+  font-weight: normal;
+  font-stretch: normal;
+}
 
 .text blockquote footer {
   font-size: .875rem;
