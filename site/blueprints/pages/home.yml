@@ -24,9 +24,11 @@ columns:
       content:
         type: fields
         fields:
-          text:
-            type: textarea
-            label: Text
-
-
-
+          layout:
+            type: layout
+            label: Content
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+              - "1/3, 1/3, 1/3"
+            settings: fields/settings

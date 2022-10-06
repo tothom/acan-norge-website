@@ -2,13 +2,25 @@
 
 {% extends 'default.twig' %}
 
-{% block blocks %}
-{% endblock blocks %}
+
 
 {% block content %}
-    <article>
-        <div class="text">
-            {{ page.text.kt | raw }}
-        </div>
-    </article>
+    {% for layout in page.layout.toLayouts() %}
+        <section class="grid" id="{{ layout.id }}">
+            {% set n = 1 %}
+            {% for column in layout.columns %}
+                <div class="column" style="grid-column:{{ n }} / span {{ column.span }}">
+                    <div class="blocks">
+{#                        {{ column.blocks | raw }}#}
+                        {% for block in column.blocks %}
+                            <div id="{{ block.type }}" class="block block-type-{{ block.type }}">
+                                {{ block | raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% set n = n + column.span %}
+            {% endfor %}
+        </section>
+    {% endfor %}
 {% endblock %}
