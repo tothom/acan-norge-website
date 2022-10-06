@@ -41,7 +41,7 @@
 <main class="main">
     <article>
         {#            <h1 class="h1">{{ page.title.esc() }}</h1> #}
-        {% block blocks %}
+        {% block content %}
             <div class="text">
                 {% for block in page.text.toBLocks() %}
                     <div id="{{ block.type }}" class="block block-type-{{ block.type }}">
@@ -50,10 +50,9 @@
                 {% endfor %}
                 {#                {{ page.text.toBlocks() | raw }} #}
             </div>
-        {% endblock blocks %}
-
+        {% endblock content %}
     </article>
-    {% block content %}
+
         {% block subpages %}
             {% for subpage in page.children() %}
                 <li>
@@ -63,7 +62,7 @@
                 </li>
             {% endfor %}
         {% endblock subpages %}
-    {% endblock %}
+
 </main>
 
 {% block footer %}
