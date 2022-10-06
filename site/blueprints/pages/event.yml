@@ -30,10 +30,11 @@ columns:
     fields:
       description:
         type: text
+        label: Description
         placeholder: A short descriptive text about the event. This text will be shown in the event overview.
       text:
-        type: blocks
-        pretty: true
+        type: textarea
+        label: Text
         help: Provide more extensive information about the event here. Whats going to happen. Do you need to bring anything etc... Put any information you want in this field. 😉
 
   - width: 1/3
@@ -48,7 +49,7 @@ columns:
           cover: fields/cover
           date:
             type: date
-            time: true
+            time: false
             default: now
           location:
             type: text

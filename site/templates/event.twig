@@ -27,8 +27,7 @@
             </div>
         </header>
         {% block blocks %}
-            {{ parent() }}
+            <div class="event text">{{ page.text.kt | raw }}</div>
         {% endblock %}
-        {#        <div class="event text">{{ page.text.toBlocks() | raw }}</div> #}
     </article>
 {% endblock %}
