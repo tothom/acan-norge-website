@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '9de63532107148709e3099822ec00c468036e4bd',
         'name' => 'getkirby/starterkit',
         'dev' => true,
     ),
@@ -19,6 +19,15 @@
             'reference' => 'abd15ced313c7b8041d7d73d8d2398b4f2510cf1',
             'dev_requirement' => false,
         ),
+        'composer/semver' => array(
+            'pretty_version' => '3.3.2',
+            'version' => '3.3.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/./semver',
+            'aliases' => array(),
+            'reference' => '3953f23262f2bff1919fc82183ad9acb13ff62c9',
+            'dev_requirement' => false,
+        ),
         'filp/whoops' => array(
             'pretty_version' => '2.14.5',
             'version' => '2.14.5.0',
@@ -29,12 +38,12 @@
             'dev_requirement' => false,
         ),
         'getkirby/cms' => array(
-            'pretty_version' => '3.7.5',
-            'version' => '3.7.5.0',
+            'pretty_version' => '3.8.0',
+            'version' => '3.8.0.0',
             'type' => 'kirby-cms',
             'install_path' => __DIR__ . '/../../kirby',
             'aliases' => array(),
-            'reference' => '021561f7444896fc9917eccb52768a6e715e9a74',
+            'reference' => '3e5899b628a2b59c1833a8d79eda292a7fe06843',
             'dev_requirement' => false,
         ),
         'getkirby/composer-installer' => array(
@@ -47,12 +56,12 @@
             'dev_requirement' => false,
         ),
         'getkirby/starterkit' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '9de63532107148709e3099822ec00c468036e4bd',
             'dev_requirement' => false,
         ),
         'laminas/laminas-escaper' => array(
