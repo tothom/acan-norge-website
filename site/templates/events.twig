@@ -2,16 +2,6 @@
 
 {% extends 'default.twig' %}
 
-{% block head %}
-    {{ parent() }}
-    <style>
-        :root {
-            --color-background: #2E3192;
-            --color-text: #fff;
-        }
-    </style>
-{% endblock %}
-
 {% block header %}
     {% include '@snippets/header.dark.twig' %}
 {% endblock %}
@@ -28,7 +18,5 @@
 {% endblock %}
 
 {% block footer %}
-
     {% include '@snippets/footer.dark.twig' %}
-
 {% endblock %}
