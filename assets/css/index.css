@@ -401,7 +401,7 @@ img {
   --w: 1;
   --h: 1;
   padding-bottom: calc(100% / var(--w) * var(--h));
-  background: var(--color-black);
+  /*background: var(--color-black);*/
 }
 
 .img img,
