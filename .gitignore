@@ -55,3 +55,7 @@ Icon
 
 /site/config/.license
 /site/config/config.php
+
+
+# Dev files
+*.bat
