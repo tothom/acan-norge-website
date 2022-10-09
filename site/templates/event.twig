@@ -18,8 +18,16 @@
                     <p class="h6">{{ page.description }}</p>
                 </div>
                 <div class="column">
+                    {% set coverImage = page.cover.toFile() %}
+
+                    {% if coverImage %}
+                        {% set coverUrl = coverImage.url() %}
+                    {% else %}
+                        {% set coverUrl = "" %}
+                    {% endif %}
+
                     {% if page.cover %}
-                        <a href="{{ page.cover.url() }}" data-lightbox class="img" style="--w:2; --h:1">
+                        <a href="{{ coverUrl }}" data-lightbox class="img" style="--w:2; --h:1">
                             {{ page.cover.crop(1200, 600) }}
                         </a>
                     {% endif %}
