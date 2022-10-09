@@ -27,7 +27,7 @@
                     {% endif %}
 
                     {% if page.cover %}
-                        <a href="{{ coverUrl }}" data-lightbox class="img" style="--w:2; --h:1">
+                        <a href="{{ coverUrl|replace({' ': '%20'}) }}" data-lightbox class="img" style="--w:2; --h:1">
                             {{ page.cover.crop(1200, 600) }}
                         </a>
                     {% endif %}
