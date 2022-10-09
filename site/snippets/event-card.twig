@@ -8,9 +8,17 @@
         <h4 class="event-excerpt-title">{{ event.title().esc() }}</h4>
 
         <figure class="img" style="--w: 16; --h:9">
+            {% set coverImage = event.cover.toFile() %}
+
+            {% if coverImage %}
+                {% set coverUrl = coverImage.url() %}
+            {% else %}
+                {% set coverUrl = "" %}
+            {% endif %}
+
             {% if event.cover %}
-                {{ event.cover.crop(320, 180) }}
-                <img src="{{ event.url() }}/{{ event.cover().url() }}"/>
+                <img src="{{ coverUrl|replace({' ': '%20'}) }}" class="img"
+                     style="--w:2; --h:1">
             {% endif %}
         </figure>
 
