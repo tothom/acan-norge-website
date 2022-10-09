@@ -12,8 +12,10 @@
                     </time>
                     <br/>
 
-                    <a class="h5" href="{{ page.content().link() }}">Link</a>
-                    <br/>
+                    {% if page.content().link() is not empty %}
+                        <a class="h5" href="{{ page.content().link() }}">Link</a>
+                        <br/>
+                    {% endif %}
 
                     <p class="h6">{{ page.description }}</p>
                 </div>
@@ -30,7 +32,7 @@
                         {% if page.cover %}
                             <img src="{{ coverUrl|replace({' ': '%20'}) }}" class="img"
                                  style="--w:2; --h:1">
-{#                            {{ page.cover.crop(1200, 600) }}#}
+                            {#                            {{ page.cover.crop(1200, 600) }} #}
 
                         {% endif %}
                     </div>
