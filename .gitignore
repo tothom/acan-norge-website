@@ -1,3 +1,7 @@
+# Dev files
+*.bat
+
+
 # Content files
 # Will be handled directly from website panel
 # -------------------------------------------
@@ -57,5 +61,3 @@ Icon
 /site/config/config.php
 
 
-# Dev files
-*.bat
