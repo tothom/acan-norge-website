@@ -24,13 +24,7 @@
                         {% set coverImage = page.cover.toFile() %}
 
                         {% if coverImage %}
-                            {% set coverUrl = coverImage.url() %}
-                        {% else %}
-                            {% set coverUrl = "" %}
-                        {% endif %}
-
-                        {% if page.cover %}
-                            <img src="{{ coverUrl|replace({' ': '%20'}) }}" class="img"
+                            <img src="{{ coverImage.url() }}" class="img"
                                  style="--w:2; --h:1">
                         {% endif %}
                     </div>
@@ -39,6 +33,8 @@
         </header>
 
         <div class="event text">{{ page.text.kt | raw }}</div>
+
+
 
     </article>
 {% endblock %}

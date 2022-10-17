@@ -8,18 +8,14 @@
         <h4 class="event-excerpt-title">{{ event.title().esc() }}</h4>
 
         <figure class="img" style="--w: 16; --h:9">
+
             {% set coverImage = event.cover.toFile() %}
 
             {% if coverImage %}
-                {% set coverUrl = coverImage.url() %}
-            {% else %}
-                {% set coverUrl = "" %}
-            {% endif %}
-
-            {% if event.cover %}
-                <img src="{{ coverUrl|replace({' ': '%20'}) }}" class="img"
+                <img src="{{ coverImage.url() }}" class="img"
                      style="--w:2; --h:1">
             {% endif %}
+
         </figure>
 
         <p class="h6">
