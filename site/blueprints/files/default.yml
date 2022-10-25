@@ -16,3 +16,12 @@ sections:
         label: Caption
         type: textarea
         size: medium
+      alt:
+        label: Alternative Text
+        type: text
+      source:
+        label: Source
+        type: text
+      link:
+        label: Link
+        type: url
