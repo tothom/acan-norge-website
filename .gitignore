@@ -2,6 +2,9 @@
 *.bat
 **/.idea/
 
+
+kirby/
+
 # Content files
 # Will be handled directly from website panel
 # -------------------------------------------
