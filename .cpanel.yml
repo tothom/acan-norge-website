@@ -11,11 +11,11 @@ deployment:
     - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH
     - export SITEPATH=/home/acannorgeno/public_html/site/
-    - /bin/cp site/blueprints $SITEPATH/blueprints
-    - /bin/cp site/collections $SITEPATH/collections
-    - /bin/cp site/controllers $SITEPATH/controllers
-    - /bin/cp site/models $SITEPATH/models
-    - /bin/cp site/plugins $SITEPATH/plugins
-    - /bin/cp site/snippets $SITEPATH/snippets
-    - /bin/cp site/templates $SITEPATH/templates
+    - /bin/cp -R site/blueprints $SITEPATH/blueprints
+    - /bin/cp -R site/collections $SITEPATH/collections
+    - /bin/cp -R site/controllers $SITEPATH/controllers
+    - /bin/cp -R site/models $SITEPATH/models
+    - /bin/cp -R site/plugins $SITEPATH/plugins
+    - /bin/cp -R site/snippets $SITEPATH/snippets
+    - /bin/cp -R site/templates $SITEPATH/templates
 
