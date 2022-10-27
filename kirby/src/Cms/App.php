@@ -925,14 +925,14 @@ class App
 		}
 
 		if ($code === 'default') {
-			return $this->languages()->default();
+			return $this->defaultLanguage();
 		}
 
 		if ($code !== null) {
 			return $this->languages()->find($code);
 		}
 
-		return $this->language = $this->language ?? $this->languages()->default();
+		return $this->language = $this->language ?? $this->defaultLanguage();
 	}
 
 	/**
@@ -1062,7 +1062,7 @@ class App
 
 		// load the main config options
 		$root    = $this->root('config');
-		$options = F::load($root . '/config.php', []);
+		$options = F::load($root . '/config.php', [], allowOutput: false);
 
 		// merge into one clean options array
 		return $this->options = array_replace_recursive(Config::$data, $options);
@@ -1080,7 +1080,7 @@ class App
 		$root = $this->root('config');
 
 		// first load `config/env.php` to access its `url` option
-		$envOptions = F::load($root . '/env.php', []);
+		$envOptions = F::load($root . '/env.php', [], allowOutput: false);
 
 		// use the option from the main `config.php`,
 		// but allow the `env.php` to override it
