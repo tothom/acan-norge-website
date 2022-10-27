@@ -6,8 +6,8 @@ deployment:
     - /bin/cp -R kirby $DEPLOYPATH
     - /bin/cp -R site $DEPLOYPATH
     - /bin/cp -R vendor $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH
-    - /bin/cp -R composer.json $DEPLOYPATH
-    - /bin/cp -R composer.lock $DEPLOYPATH
-    - /bin/cp -R favicon.ico $DEPLOYPATH
-    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp composer.json $DEPLOYPATH
+    - /bin/cp composer.lock $DEPLOYPATH
+    - /bin/cp favicon.ico $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
