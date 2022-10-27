@@ -1,6 +1,6 @@
 # Dev files
 *.bat
-
+**/.idea/
 
 # Content files
 # Will be handled directly from website panel
