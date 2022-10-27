@@ -18,4 +18,3 @@ deployment:
     - /bin/cp -R site/plugins $SITEPATH/plugins
     - /bin/cp -R site/snippets $SITEPATH/snippets
     - /bin/cp -R site/templates $SITEPATH/templates
-
