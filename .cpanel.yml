@@ -3,7 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/acannorgeno/public_html/
     - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R kirby $DEPLOYPATH
     - /bin/cp -R vendor $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp composer.json $DEPLOYPATH
