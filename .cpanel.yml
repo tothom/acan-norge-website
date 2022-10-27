@@ -4,10 +4,18 @@ deployment:
     - export DEPLOYPATH=/home/acannorgeno/public_html/
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R kirby $DEPLOYPATH
-    - /bin/cp -R site $DEPLOYPATH
     - /bin/cp -R vendor $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp composer.json $DEPLOYPATH
     - /bin/cp composer.lock $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
+    - export SITEPATH=/home/acannorgeno/public_html/site/
+    - /bin/cp site/blueprints $SITEPATH/blueprints
+    - /bin/cp site/collections $SITEPATH/collections
+    - /bin/cp site/controllers $SITEPATH/controllers
+    - /bin/cp site/models $SITEPATH/models
+    - /bin/cp site/plugins $SITEPATH/plugins
+    - /bin/cp site/snippets $SITEPATH/snippets
+    - /bin/cp site/templates $SITEPATH/templates
+
