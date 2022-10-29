@@ -61,3 +61,4 @@
 </article>
 
 <?php snippet('footer') ?>
+
