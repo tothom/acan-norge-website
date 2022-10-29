@@ -2,18 +2,18 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/acannorgeno/public_html/
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R vendor $DEPLOYPATH
+    - /bin/cp -TR assets $DEPLOYPATH
+    - /bin/cp -TR vendor $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp composer.json $DEPLOYPATH
     - /bin/cp composer.lock $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH
     - export SITEPATH=/home/acannorgeno/public_html/site/
-    - /bin/cp -R site/blueprints $SITEPATH/blueprints
-    - /bin/cp -R site/collections $SITEPATH/collections
-    - /bin/cp -R site/controllers $SITEPATH/controllers
-    - /bin/cp -R site/models $SITEPATH/models
-    - /bin/cp -R site/plugins $SITEPATH/plugins
-    - /bin/cp -R site/snippets $SITEPATH/snippets
-    - /bin/cp -R site/templates $SITEPATH/templates
+    - /bin/cp -TR site/blueprints $SITEPATH/blueprints
+    - /bin/cp -TR site/collections $SITEPATH/collections
+    - /bin/cp -TR site/controllers $SITEPATH/controllers
+    - /bin/cp -TR site/models $SITEPATH/models
+    - /bin/cp -TR site/plugins $SITEPATH/plugins
+    - /bin/cp -TR site/snippets $SITEPATH/snippets
+    - /bin/cp -TR site/templates $SITEPATH/templates
