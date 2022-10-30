@@ -2,18 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/acannorgeno/public_html/
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R vendor $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
-    - /bin/cp composer.json $DEPLOYPATH
-    - /bin/cp composer.lock $DEPLOYPATH
-    - /bin/cp favicon.ico $DEPLOYPATH
-    - /bin/cp index.php $DEPLOYPATH
-    - export SITEPATH=/home/acannorgeno/public_html/site/
-    - /bin/cp -R site/blueprints $SITEPATH/blueprints
-    - /bin/cp -R site/collections $SITEPATH/collections
-    - /bin/cp -R site/controllers $SITEPATH/controllers
-    - /bin/cp -R site/models $SITEPATH/models
-    - /bin/cp -R site/plugins $SITEPATH/plugins
-    - /bin/cp -R site/snippets $SITEPATH/snippets
-    - /bin/cp -R site/templates $SITEPATH/templates
+    - /bin/rsync -a --delete-after --exclude={'kirby', 'content', '.cpanel.yml', '.editorconfig','.gitignore', '*.bat', 'site/cache', 'site/accounts', 'site/config'} ./ $DEPLOYPATH
