@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$DEPLOYPATH
+    - export DEPLOYPATH=/home/acannorgeno/public_html/
     - /bin/rsync -av --delete-after assets $DEPLOYPATH
     - /bin/rsync -av --delete-after vendor $DEPLOYPATH
     - /bin/rsync -av --delete-after --exclude cache --exclude accounts --exclude config site $DEPLOYPATH
